@@ -1,7 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+### A simple Meme Generator made using react class base component
 ## Available Scripts
 
 In the project directory, you can run:
