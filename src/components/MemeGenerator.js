@@ -11,12 +11,21 @@ class MemeGenerator extends React.Component {
             allMemeImages: [],
             isLoading: false
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
     }
+
     componentDidMount() {
         this.setState({isLoading: true});
         fetch(BASE_URL).then(r => r.json()).then(response => {
             this.setState({allMemeImages: response.data.memes})
         });
+    }
+
+    handleInputChange (e) {
+       this.setState({
+           [e.target.name]: e.target.value
+       })
+
     }
 
     render() {
