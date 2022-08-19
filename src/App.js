@@ -21,9 +21,7 @@ class App extends React.Component {
                     </a>
                 </header>
             </div>
-
         )
-
     }
 }
 
