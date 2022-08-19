@@ -74,4 +74,4 @@ class MemeGenerator extends React.Component {
     }
 }
 
-export default MemeGenerator
+export default MemeGenerator;
