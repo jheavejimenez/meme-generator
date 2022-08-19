@@ -12,6 +12,7 @@ class MemeGenerator extends React.Component {
             isLoading: true
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +29,13 @@ class MemeGenerator extends React.Component {
 
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        const randomImage = this.state.allMemeImages[Math.floor(Math.random() * this.state.allMemeImages.length)];
+        this.setState({
+            randomImage: randomImage.url,
+        })
+    }
     render() {
         const isLoading = this.state.isLoading;
 
@@ -36,7 +44,7 @@ class MemeGenerator extends React.Component {
                 {isLoading
                     ? <div>loading...</div>
                     : <div>
-                        <form className={"meme-form"}>
+                        <form className={"meme-form"} onSubmit={this.handleSubmit}>
                             <input
                                 type={"text"}
                                 name={"topText"}
